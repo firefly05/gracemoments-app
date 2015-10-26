@@ -27,7 +27,7 @@
       <h1>Welcome To My Homepage</h1>
     </div>
 
-      <div data-role="main" class="ui-content">
+      <div data-role="main" class="ui-content content-body">
         <div class="content-area">
           <h2>Title H2</h2>
           <p>I Am Now A Mobile Developer</p>
@@ -40,8 +40,8 @@
 
     <div data-role="footer" data-position="fixed">
         <div data-role="navbar">
-          <ul class="ui-alt-icon">
-            <li><a href="#" class="ui-nodisc-icon" data-icon="grid" data-iconpos="notext">Cal</a></li>
+          <ul class="footer-nav ui-alt-icon">
+            <li><a href="pages/calendar.html" class="ui-nodisc-icon" data-icon="grid" data-iconpos="notext">Cal</a></li>
             <li><a href="#" class="ui-nodisc-icon" data-icon="carat-l"><</a></li>
             <li><a href="#" class="ui-nodisc-icon" data-icon="carat-r">></a></li>
             <!-- <li><a href="#" class="ui-nodisc-icon">Aa</a></li> -->
@@ -56,6 +56,21 @@
         <script type="text/javascript" src="js/index.js"></script>
         <script type="text/javascript">
             app.initialize();
+
+            // Define a click binding for all anchors in the page
+            $( ".footer-nav a" ).on( "click", function( event ) {
+
+              // Prevent the usual navigation behavior
+              event.preventDefault();
+
+              var url = $(this).attr('href');
+
+             
+              //replace content on screen with requested page
+              $('.content-body').load(url);
+
+            });
+            
         </script>
 
     </body>
