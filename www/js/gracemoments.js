@@ -16,6 +16,6 @@ $( ".footer-nav a" ).on( "click", function( event ) {
   var url = $(this).attr('href');
  
   //replace content on screen with requested page
-  $('.content-body').load(url);
+  $('.content-body').load(url, showCalendar);
 
 });

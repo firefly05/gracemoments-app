@@ -12,16 +12,24 @@
 <script src="js/jquery.datepick.min.js"></script>
 <script>
 $(function() {
+
   $('#inlineDatepicker').datepick({
     onSelect: showDate
   });
+
 });
+
+function showCalendar(){
+  $('#inlineDatepicker').datepick({
+    onSelect: showDate
+  });
+}
 
 function showDate(date) {
  
   var myDay = $.datepick.formatDate( 
         'mmdd', $('#inlineDatepicker').datepick('getDate')[0]);
-  console.log(myDay);
+        console.log(myDay);
 }
 </script>
 
@@ -68,9 +76,7 @@ function showDate(date) {
         <script type="text/javascript">
             app.initialize();
         </script>
-        <script>
-          $(".devotion-calendar").datepick();
-        </script>
+       
         <script type="text/javascript" src="js/gracemoments.js"></script>
 
     </body>
