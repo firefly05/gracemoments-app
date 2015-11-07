@@ -12,11 +12,16 @@
 <script src="js/jquery.datepick.min.js"></script>
 <script>
 $(function() {
-  $('#inlineDatepicker').datepick({onSelect: showDate});
+  $('#inlineDatepicker').datepick({
+    onSelect: showDate
+  });
 });
 
 function showDate(date) {
-  alert('The date chosen is ' + date);
+ 
+  var myDay = $.datepick.formatDate( 
+        'mmdd', $('#inlineDatepicker').datepick('getDate')[0]);
+  console.log(myDay);
 }
 </script>
 
@@ -27,12 +32,12 @@ function showDate(date) {
 
   <div data-role="page">
     <div data-role="header" data-position="fixed">
-      <h1>Welcome To My Homepage</h1>
+      <h1>Welcome To My Calendar</h1>
     </div>
 
       <div data-role="main" class="ui-content content-body">
         <div class="content-area">
-          <h2>Title H2</h2>
+          <h2>Calendar</h2>
           <p>I Am Now A Mobile Developer</p>
           
             <div id="inlineDatepicker"></div>
